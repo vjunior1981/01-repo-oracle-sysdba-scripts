@@ -130,7 +130,8 @@ col global_name noprint
 --select upper(sys_context ('userenv', 'instance_name') || ':' || sys_context('userenv', 'con_name')) global_name from dual;
 
 --11g:
-select upper(sys_context ('userenv', 'instance_name')) global_name from dual;
+--select upper(sys_context ('userenv', 'instance_name')) global_name from dual;
+select value global_name from v$parameter where name = 'db_unique_name';
 
 -- prompt
 set sqlprompt '_user@&gname > '
